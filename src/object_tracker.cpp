@@ -45,6 +45,7 @@ Object::Object(
   : m_markerConfigurationIdx(markerConfigurationIdx)
   , m_dynamicsConfigurationIdx(dynamicsConfigurationIdx)
   , m_lastTransformation(initialTransformation)
+  , m_velocity(Eigen::Vector3f(0.0,0.0,0.0))
   , m_initialTransformation(initialTransformation)
   , m_lastValidTransform()
   , m_lastTransformationValid(false)
@@ -55,6 +56,11 @@ Object::Object(
 const Eigen::Affine3f& Object::transformation() const
 {
   return m_lastTransformation;
+}
+
+const Eigen::Vector3f& Object::velocity() const
+{
+  return m_velocity;
 }
 
 const Eigen::Affine3f& Object::initialTransformation() const

@@ -35,6 +35,8 @@ namespace libobjecttracker {
     const Eigen::Affine3f& transformation() const;
     Eigen::Vector3f center() const { return m_lastTransformation.translation(); }
 
+    const Eigen::Vector3f& velocity() const;
+
     const Eigen::Affine3f& initialTransformation() const;
     Eigen::Vector3f initialCenter() const { return m_initialTransformation.translation(); }
 
